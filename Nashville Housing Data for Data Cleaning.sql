@@ -1,5 +1,5 @@
 /*
-Cleaning Data in SQL Queries
+Limpiando Datos en SQL 
 */
 
 SELECT *
@@ -22,7 +22,7 @@ SET SaleDateConverted = CONVERT(Date,SaleDate)
 
 
 
--- Rellenar datos de dirección de propiedad
+-- Rellenar datos de direcciÃ³n de propiedad
 
 Select *
 From PortfolioProject..NashvilleHousing
@@ -48,7 +48,7 @@ WHERE a.PropertyAddress	is null
 
 
 
--- Dividir la dirección en columnas individuales (dirección, ciudad, estado)
+-- Dividir la direcciÃ³n en columnas individuales (direcciÃ³n, ciudad, estado)
 
 
 Select PropertyAddress
@@ -125,7 +125,7 @@ From PortfolioProject..NashvilleHousing
 
 ---------------------------------------------------------------------------
 
--- Cambie Y y N a Sí y No en el campo "Vendido como vacante"
+-- Cambie Y y N a SÃ­ y No en el campo "Vendido como vacante"
 
 Select Distinct(SoldAsVacant), Count(SoldAsVacant)
 From PortfolioProject..NashvilleHousing
