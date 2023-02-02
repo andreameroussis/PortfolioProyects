@@ -31,8 +31,8 @@ AND WHERE location like '%peru%'
 order by 2 
 
 
--- Casos totales VS Poblaci髇
--- Muestra quee porcentaje de la poblaci髇 tiene Covid
+-- Casos totales VS Poblaci贸n
+-- Muestra quee porcentaje de la poblaci贸n tiene Covid
 
 select location, date, population, total_cases, (total_cases/population)*100 AS PercentPopulationInfected
 from PortfolioProject..CovidDeaths
@@ -41,7 +41,7 @@ WHERE continent is not null
 order by 1,2
 
 
--- Analizando los pa韘es con la tasa de infecci髇 m醩 alta en comparaci髇 con la poblaci髇
+-- Analizando los pa铆ses con la tasa de infecci贸n m谩s alta en comparaci贸n con la poblaci贸n
 
 select location,  population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
 from PortfolioProject..CovidDeaths
@@ -51,7 +51,7 @@ GROUP BY location,  population
 order by PercentPopulationInfected DESC
 
 
--- Mostrando los pa韘es con el mayor recuento de muertes por poblaci髇
+-- Mostrando los pa铆ses con el mayor recuento de muertes por poblaci贸n
 
 select location, MAX(total_deaths) AS TotalDeathCount
 from PortfolioProject..CovidDeaths
@@ -63,7 +63,7 @@ order by TotalDeathCount DESC
 
 -- Vamos a desglosar las cosas por continente
 
--- Mostrando los continentes con el mayor recuento de muertes por poblaci髇
+-- Mostrando los continentes con el mayor recuento de muertes por poblaci贸n
 
 select continent, MAX(total_deaths) AS TotalDeathCount
 from PortfolioProject..CovidDeaths
